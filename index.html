@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="main.css">
+		<title>lesson03</title>
+		</head>
+		<body ng-app="Lesson03">
+			<div ng-controller="MyController as ctrl" ng-class="ctrl.userSelection.backgroundcolor">
+		<nav>
+			<h1>Themes</h1>
+			<div id="center">
+				<div ng-repeat="color in ctrl.colors" id="selection">
+						<input type="radio"
+										name="theme"
+										ng-value="color"
+										ng-model="ctrl.userSelection">
+						<span ng-bind="color.name"></span>				
+				</div>
+			<div>	
+		</nav>		
+		<div id="middle">
+			<div id="folders" ng-class="ctrl.userSelection.folders">
+				<h2>Folders</h2>
+				<div id="folderBox">
+				<label>Show/Hide:
+						<input type="checkbox" ng-model="ctrl.checkboxIsClicked">
+				</label>					
+						<div ng-repeat="folder in ctrl.folders">
+							<h3 ng-bind="folder.name"></h3>
+								<ul ng-if="ctrl.checkboxIsClicked">
+									<li ng-repeat="item in folder.items">
+									<span id="items" ng-bind="item"></span></li>
+								</ul>
+						</div>
+			</div>
+			</div>
+
+			<div id="lorem" ng-class="ctrl.userSelection.loremColor">
+				Lorem ipsum dolor sit amet, qui idque vivendum singulis te, ea eam ridens complectitur. In pri prima sonet dolores, no prompta indoctum tractatos qui. Aeque mollis definiebas cum te. Vel et deserunt torquatos intellegam, eum molestie ocurreret an, eam te virtute numquam scripserit. Ex sit utamur platonem adolescens.
+
+				Ea postea mnesarchum duo. Duo iusto iisque cu, intellegat cotidieque usu id, mea eu dicunt docendi eligendi. Usu et ancillae fabellas, sint necessitatibus in duo. Cu natum eleifend his, pro vide suscipit at. Te semper platonem vim. Mea illum harum saperet no, vituperata argumentum est ne. Eu soleat pericula mea.
+
+				Agam posse duo eu. An homero democritum rationibus per, voluptua gloriatur voluptatibus ea vim. Nam ne quidam oblique mnesarchum, reque inciderint vel in. Recteque torquatos nam et. Iusto mandamus vix cu, cu dicam dolorum eam, eos ut dolor offendit. Exerci pertinacia efficiendi at eum, malorum sententiae cotidieque usu ex.
+
+				An vim porro dicat libris, vis graeco facilisi ei. Vix et natum fabellas, debitis theophrastus per ad. Admodum accusam et vim. Mea id dicunt inermis perpetua, nostrum intellegebat te nec. Usu et quis fugit quaeque, vix animal scribentur an. At decore graecis vel, no dolorum pericula intellegebat mel, eos no suas magna adipisci. Ea debitis instructior comprehensam nam, primis numquam postulant et vix.
+			</div>
+			
+
+		</div>
+
+
+		</div>
+	</body>	
+</html>
